@@ -2,30 +2,29 @@ import argparse
 
 import torch
 import yaml
-from torchstat import stat
 
-from convNet import CNN
-from AlexNet import AlexNet
-from DenseNet import DenseNet
-from GoogLeNet import GoogLeNet
-from ResNet import ResNet
-from SENet import SENet
-from VGG import VGG11
-from NiN import NIN
-from MLPMixer import MLPMixer
-from MobileNetV1 import MobileNetV1
-from InceptionV3 import InceptionV3
-from Xception import Xception
-from ResNeXt import ResNeXt29_2x64d
-from ViT import ViT
-from MobileNetV2 import MobileNetV2
-from Darknet53 import Darknet53
-from SqueezeNet import SqueezeNet
-from ShuffleNet import ShuffleNet
-from EfficientNet import EfficientNet
-from ResMLP import ResMLP
-from gMLP import gMLPForImageClassification
-from EfficientNetV2 import EfficientNetV2
+from models.convNet import CNN
+from models.AlexNet import AlexNet
+from models.DenseNet import DenseNet
+from models.GoogLeNet import GoogLeNet
+from models.ResNet import ResNet
+from models.SENet import SENet
+from models.VGG import VGG11
+from models.NiN import NIN
+from models.MLPMixer import MLPMixer
+from models.MobileNetV1 import MobileNetV1
+from models.InceptionV3 import InceptionV3
+from models.Xception import Xception
+from models.ResNeXt import ResNeXt29_2x64d
+from models.ViT import ViT
+from models.MobileNetV2 import MobileNetV2
+from models.Darknet53 import Darknet53
+from models.SqueezeNet import SqueezeNet
+from models.ShuffleNet import ShuffleNet
+from models.EfficientNet import EfficientNet
+from models.ResMLP import ResMLP
+from models.gMLP import gMLPForImageClassification
+from models.EfficientNetV2 import EfficientNetV2
 
 from dataset import initialize_dataset
 from train_test import Training
@@ -44,7 +43,7 @@ args = model_parser.parse_args()
 
 """Loading Config File"""
 try:
-    stream = open("config.yaml", 'r')
+    stream = open("config/config.yaml", 'r')
     config = yaml.safe_load(stream)
 except FileNotFoundError:
     print("Config file missing")
